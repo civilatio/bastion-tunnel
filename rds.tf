@@ -24,7 +24,7 @@ resource "aws_db_instance" "rds" {
   engine                    = "postgres"
   engine_version            = "10.15"
   instance_class            = "db.t3.micro"
-  identifier                = "${var.environment_name}-db"
+  identifier                = "${var.developer}-db"
   username                  = var.database_username
   password                  = var.database_password
   vpc_security_group_ids    = [aws_security_group.rds.id]

@@ -53,7 +53,7 @@ resource "aws_instance" "bastion" {
 
   tags = {
     Environment = var.environment_name
-    Name        = "${var.environment_name}-bastion"
+    Name        = "${var.developer}-bastion"
     user        = var.developer
   }
 }

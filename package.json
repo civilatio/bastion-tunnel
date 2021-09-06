@@ -1,0 +1,34 @@
+{
+  "name": "bastion-tunnel",
+  "version": "1.0.0",
+  "description": "A bastion host to establish a tunnel to a private AWS VPC network.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/civilatio/bastion-tunnel.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/civilatio/bastion-tunnel/issues"
+  },
+  "homepage": "https://github.com/civilatio/bastion-tunnel#readme",
+  "dependencies": {
+    "aws-sdk": "^2.983.0",
+    "dotenv": "^10.0.0",
+    "gulp": "^4.0.2",
+    "minimist": "^1.2.5",
+    "os": "^0.1.2",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.2"
+  },
+  "devDependencies": {
+    "@types/aws-sdk": "^2.7.0",
+    "@types/gulp": "^4.0.9",
+    "@types/minimist": "^1.2.2",
+    "@types/node": "^16.7.10"
+  }
+}

@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "commonjs",
+        "lib": ["ES2018"],
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "skipLibCheck": true
+    },
+    "ts-node": {
+        "transpileOnly": true
+    },
+    "include": ["gulpfile.ts", "gulp.helpers.ts"],
+    "exclude": ["node_modules"]
+}
