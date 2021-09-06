@@ -1,6 +1,6 @@
 resource "aws_db_subnet_group" "rds" {
   name       = "${var.environment_name}"
-  subnet_ids = [aws_subnet.private.id]
+  subnet_ids = [aws_subnet.private.id, aws_subnet.private1.id]
 
   tags = {
     Environment = var.environment_name
@@ -32,7 +32,6 @@ resource "aws_db_instance" "rds" {
   skip_final_snapshot       = true
   final_snapshot_identifier = "${var.environment_name}-db-snapshot"
   storage_encrypted         = true
-  parameter_group_name      = "${var.environment_name}-params"
   ca_cert_identifier        = "rds-ca-2019"
   apply_immediately         = true
   backup_retention_period   = 7
@@ -43,9 +42,5 @@ resource "aws_db_instance" "rds" {
   tags = {
     Environment = var.environment_name
     user        = var.developer
-  }
-
-  lifecycle {
-    ignore_changes = [allocated_storage]
   }
 }
