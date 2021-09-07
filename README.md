@@ -9,6 +9,7 @@ A bastion host to establish a ssh-tunnel to a private AWS VPC network which cont
     1. Gulp | ```npm i -g gulp```
     2. Typescript | ```npm i -g typescript```
     3. ts-node | ```npm i -g ts-node```
+    4. ts-node | ```npm i -g dotenv-cli```
 3. AWS Cli
 
 # Instructions
@@ -16,8 +17,8 @@ A bastion host to establish a ssh-tunnel to a private AWS VPC network which cont
     1. TF_VAR_public_key=\<your-public-ssh-key>
     2. TF_VAR_developer=\<your-name>
     3. Optional: AWS_PROFILE=\<your-aws-profile>
-2. Execute ```terraform apply```
-3. Execute ```npm i```
+2. Execute ```npm i```
+3. Execute ```npm run terraform:apply```
 4. Execute ```gulp bastion:tunnel```
 
 Now a tunnel to your AWS VPC is established and you can connect to the RDS as if it is on your local machine:

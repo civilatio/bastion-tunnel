@@ -4,7 +4,8 @@
   "description": "A bastion host to establish a tunnel to a private AWS VPC network.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "terraform:apply": "dotenv -e .env -- terraform apply",
+    "terraform:destroy": "dotenv -e .env -- terraform destroy"
   },
   "repository": {
     "type": "git",
