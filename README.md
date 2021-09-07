@@ -1,6 +1,8 @@
 # bastion-tunnel to RDS
 A bastion host to establish a ssh-tunnel to a private AWS VPC network which contains a RDS database. This is done via port forwarding from the bastion host to the database instance.
 
+![Architecture overview](docs/bastion-tunnel.png)
+
 # Prerequisites
 1. Terraform > v0.13
 2. Node & NPM
