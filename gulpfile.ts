@@ -2,8 +2,8 @@ import * as gulp from 'gulp';
 import * as minimist from 'minimist';
 import * as AWS from 'aws-sdk';
 import * as os from 'os';
-import { execAsync } from './gulp.helpers';
 import { config } from 'dotenv';
+import { spawn } from 'child_process';
 
 config();
 
@@ -38,10 +38,7 @@ const openTunnel = async function(key = ''): Promise<void> {
     command.push('-L', `5432:${rds}:5432`);
 
     console.log(`ssh ${command.join(' ')}`);
-    execAsync(`${os.platform() !== 'win32' ? 'sudo ' : ''}ssh`, command, '.').catch((e: Error | string) => {
-        console.error(e);
-        process.exit(1);
-    });
+    spawn(`${os.platform() !== 'win32' ? 'sudo ' : ''}ssh`, command, { shell: true, stdio: 'inherit'});
 };
 
 async function findBastionIP(): Promise<string> {
